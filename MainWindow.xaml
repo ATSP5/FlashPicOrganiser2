@@ -1,0 +1,38 @@
+﻿<Window x:Class="FlashPicOrganizer2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlashPicOrganizer2"
+        mc:Ignorable="d"
+        Title="FlashPicOrganizer" Height="450" Width="800" SizeChanged="Window_SizeChanged" Name="FlashPicOrganizerMW" KeyDown="FlashPicOrganizerMW_KeyDown_1" KeyUp="FlashPicOrganizerMW_KeyUp">
+    <Grid IsEnabled="True">
+        <Canvas Name="canvas1"  Height="100"  Width="100" MouseMove="Canvas1_MouseMove" MouseWheel="Canvas1_MouseWheel" Background="#FFC5F999" MouseDown="canvas1_MouseDown" MouseUp="canvas1_MouseUp" MouseRightButtonDown="Canvas1_MouseRightButtonDown" MouseLeftButtonDown="Canvas1_MouseLeftButtonDown" MouseLeftButtonUp="Canvas1_MouseLeftButtonUp">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform x:Name="st"></ScaleTransform>
+                    <TranslateTransform x:Name="translate"></TranslateTransform>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+        </Canvas>
+        <Menu HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="782" Name="MainMenu">
+            <MenuItem Header="Plik">
+                <MenuItem Header="Otwórz"/>
+                <MenuItem Header="Zapisz"/>
+                <MenuItem Header="Importuj Obraz" Click="MenuItem_Click_Importuj_Obraz"/>
+                <MenuItem Header="Zamknij" Click="MenuItem_Click_Zamknij"/>
+            </MenuItem>
+            <MenuItem Header="Kolekcja">
+                <MenuItem Header="Dodaj do kolekcji"/>
+                <MenuItem Header="Usuń z kolekcji"/>
+                <MenuItem Header="Edytuj opis"/>
+            </MenuItem>
+            <CheckBox Content="Rysuj Tagi" Name="DrawTagEnButton" Checked="DrawTagEnButtonChecked" Unchecked="DrawTagEnButtonUnChecked" /> 
+            <Button Content="Poprzedni"/>
+            <Button Content="Następny"/>
+            <Slider FontSize="14" Maximum="100" Minimum="1" MinWidth="150" Name="menuslider1" ValueChanged="Menuslider_ValueChanged" />
+            <CheckBox Content="Usuń Tag prawym przyciskiem myszki" Checked="DeleteTagChecked" Unchecked="DeleteTagUnChecked" Name="deltagcheckbox"/>
+        </Menu>
+
+    </Grid>
+</Window>
